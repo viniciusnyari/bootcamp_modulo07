@@ -1,0 +1,67 @@
+#Criando a aplicação do zero
+yarn create react-app bootcamp_modulo07
+
+#Excluir os comentários e o arquivo 
+manifest.json
+
+#Excluir esses e zelar para evitar os erros -  remover as referências
+App.css
+App.test.js
+index.css
+logo.svg
+serviceWorker.js
+
+#Gerando o arquivo '.editorConfig'
+Botão direito nos arquivos em uma área livre e escolher 'Generator .editorConfig'
+Será gerado o arquivo
+
+#Adicionar o EsLint como dependência de desenvolvimento
+yarn add eslint -D
+
+#Inicializando o 'eslint'
+yarn eslint --init
+Responda as perguntas conforme abaixo: 
+? How would you like to use ESLint? To check syntax, find problems, and enforce code style
+? What type of modules does your project use? JavaScript modules (import/export)
+? Which framework does your project use? React
+? Does your project use TypeScript? No
+? Where does your code run? Browser
+? How would you like to define a style for your project? Use a popular style guide
+? Which style guide do you want to follow? Airbnb: https://github.com/airbnb/javascript
+? What format do you want your config file to be in? JavaScript
+Checking peerDependencies of eslint-config-airbnb@latest
+Responsa 'Y' para tudo o que for questionado e aguarde a instalação.
+
+#Instalando pretier - deixa o código mais bonito - eslint procura erros (ausência de pontos)
+yarn add prettier eslint-config-prettier eslint-plugin-prettier babel-eslint -D
+
+#Criar arquivo '.prettierrc'
+{
+  "singleQuote": true,
+  "trainlingComma":"es5"
+}
+
+#Configurações do '.eslintrc.js'
+extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'prettier',
+    'prettier/react',
+  ],
+parser: 'babel-eslint',
+plugins: [
+    'react',
+    'prettier',
+  ],
+  rules: {
+    'prettier/prettier':'error',
+    'react/jsx-filename-extension' :[
+      'warn',
+      { extensions: ['.jsx','.js']}
+    ],
+    'import/prefer-default-export': 'off'
+  },  
+
+
+#Rodando a aplicação - essa configuração está no 'package.json'
+yarn react-scripts start
