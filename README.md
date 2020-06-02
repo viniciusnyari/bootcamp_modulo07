@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## React Web com Arquitetura Redux
+## React Web com Arquitetura `Redux`
 
 Ver o arquivo com a documentação e passo a passo
 
