@@ -65,3 +65,17 @@ plugins: [
 
 #Rodando a aplicação - essa configuração está no 'package.json'
 yarn react-scripts start
+
+#Instalar para fazer roteamento SPA
+yarn add react-router-dom
+
+#Instalar 'styled-components'
+yarn add styled-components
+
+#Usando fonte 'Roboto'
+https://fonts.google.com/specimen/Roboto
+
+#Aplicando ao CSS
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+Parei aqui 'Criando Header' fiz o download da imagem
