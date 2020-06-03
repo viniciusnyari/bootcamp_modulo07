@@ -83,3 +83,5 @@ yarn add react-icons
 
 #Instalando a bilbioteca - cores dentro do javascript
 yarn add polished
+
+parei aqui 'Estilização do Carrinho' '05:00'
