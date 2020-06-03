@@ -84,4 +84,26 @@ yarn add react-icons
 #Instalando a bilbioteca - cores dentro do javascript
 yarn add polished
 
-parei aqui 'Estilização do Carrinho' '05:00'
+#Criando api fake
+https://github.com/typicode/json-server
+Permite criar uma API fake enquanto a API nova não está pronta
+
+#Instalando o Json-Server de forma global
+yarn global add json-server
+Após instalado foi criado um arquivo chamado 'server.json' com os produtos e foi colocado no raiz do projeto
+
+#Instalando o axios
+yarn add axios
+
+#Executando o server fake com aquele arquivo json gerado - api fake
+json-server server.json -p 3333 -w
+Se pode acessar a api fake através do endereço no navegador 'http://localhost:3333/products'
+
+
+
+
+#Repositório
+C:\Temp\Bootcamp2019\bootcamp_modulo07
+
+#Iniciar a aplicação
+yarn react-scripts start
