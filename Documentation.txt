@@ -80,3 +80,6 @@ https://fonts.google.com/specimen/Roboto
 
 #Instalando ícones
 yarn add react-icons
+
+#Instalando a bilbioteca - cores dentro do javascript
+yarn add polished
