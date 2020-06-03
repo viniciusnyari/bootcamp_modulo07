@@ -78,4 +78,5 @@ https://fonts.google.com/specimen/Roboto
 #Aplicando ao CSS
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
-Parei aqui 'Criando Header' fiz o download da imagem
+#Instalando ícones
+yarn add react-icons
