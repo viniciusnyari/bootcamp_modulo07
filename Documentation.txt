@@ -100,6 +100,7 @@ json-server server.json -p 3333 -w
 Se pode acessar a api fake através do endereço no navegador 'http://localhost:3333/products'
 
 
+Parei aqui 'Buscando produtos da API'
 
 
 #Repositório
