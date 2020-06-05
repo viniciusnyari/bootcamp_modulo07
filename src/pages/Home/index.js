@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { MdAddShoppingCart } from 'react-icons/md';
 import api from '../../services/api';
 import { formatPrice } from '../../util/format';
+import * as CartActions from '../../store/modules/cart/actions';
 
 import { ProductList } from './styles';
 
@@ -22,12 +24,9 @@ class Home extends Component {
   }
 
   handleProduct = (product) => {
-    const { dispatch } = this.props;
+    const { addToCard } = this.props;
 
-    dispatch({
-      type: 'ADD_TO_CART',
-      product,
-    });
+    addToCard(product);
   };
 
   render() {
@@ -53,4 +52,9 @@ class Home extends Component {
   }
 }
 
-export default connect()(Home);
+// Mapeia o Dispatch para dentro das props do componente
+// Usa a função como se fosse nativa do componente
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(CartActions, dispatch);
+
+export default connect(null, mapDispatchToProps)(Home);
