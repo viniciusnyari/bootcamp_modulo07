@@ -109,6 +109,15 @@ yarn add reactotron-react-js reactotron-redux
 https://github.com/immerjs/immer
 yarn add immer
 
+#Instalando 'redux-saga' - middleware que interceptar actions
+yarn add redux-saga
+
+#Instalando 'reactotron-redux-saga' para integrar saga com reactotron
+yarn add reactotron-redux-saga
+
+#Instalando 'react-toastify' para exibir melhor as mensagens
+yarn add react-toastify
+
 
 #Repositório
 C:\Temp\Bootcamp2019\bootcamp_modulo07
