@@ -1,14 +1,32 @@
-import { call, put, all, takeLatest } from 'redux-saga/effects';
+import { call, select, put, all, takeLatest } from 'redux-saga/effects';
 import api from '../../../services/api';
-import { addToCardSuccess } from './actions';
+import { formatPrice } from '../../../util/format';
+import { addToCardSuccess, updateAmount } from './actions';
 
 // O 'asterisco' indica que a função é 'async await', essa notação chama-se
 // 'generator' e ele é mais poderoso que o 'async await'
 function* addToCart({ id }) {
-  // yield = ield
-  const response = yield call(api.get, `/products/${id}`);
+  const productExists = yield select((state) =>
+    state.cart.find((p) => p.id === id)
+  );
 
-  yield put(addToCardSuccess(response.data));
+  if (productExists) {
+    const amount = productExists.amount + 1;
+
+    // Dispara a action
+    yield put(updateAmount(id, amount));
+  } else {
+    // yield = ield
+    const response = yield call(api.get, `/products/${id}`);
+
+    const data = {
+      ...response.data,
+      amount: 1,
+      priceFormatted: formatPrice(response.data.price),
+    };
+
+    yield put(addToCardSuccess(data));
+  }
 }
 // takeLatest garante que somente a última chamada será aproveitada
 export default all([takeLatest('@cart/ADD_REQUEST', addToCart)]);
