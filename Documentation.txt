@@ -99,8 +99,15 @@ yarn add axios
 json-server server.json -p 3333 -w
 Se pode acessar a api fake através do endereço no navegador 'http://localhost:3333/products'
 
+#Instalando o 'Redux'
+yarn add redux react-redux
 
-Parei aqui 'Buscando produtos da API'
+#Instalando 'reactotron'
+yarn add reactotron-react-js reactotron-redux
+
+#Inatalando 'immer' - gerencia melhor objetos/arrays imutáveis
+https://github.com/immerjs/immer
+yarn add immer
 
 
 #Repositório
