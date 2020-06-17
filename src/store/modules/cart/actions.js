@@ -1,3 +1,4 @@
+// Essa será utilizada pelo Saga
 export function addToCardRequest(id) {
   return {
     type: '@cart/ADD_REQUEST',
@@ -5,6 +6,7 @@ export function addToCardRequest(id) {
   };
 }
 
+// Essa será utilizada pelo reducer
 export function addToCardSuccess(product) {
   return {
     type: '@cart/ADD_SUCCESS',
@@ -19,9 +21,19 @@ export function removeFromCart(id) {
   };
 }
 
-export function updateAmount(id, amount) {
+// Essa será utilizada pelo Saga
+export function updateAmountRequest(id, amount) {
   return {
-    type: '@cart/UPDATE_AMOUNT',
+    type: '@cart/UPDATE_AMOUNT_REQUEST',
+    id,
+    amount,
+  };
+}
+
+// Essa será utilizada pelo reducer
+export function updateAmountSuccess(id, amount) {
+  return {
+    type: '@cart/UPDATE_AMOUNT_SUCCESS',
     id,
     amount,
   };

@@ -119,6 +119,7 @@ yarn add reactotron-redux-saga
 yarn add react-toastify
 
 
+Parei aqui: Estoque na alteração - 02:41
 #Repositório
 C:\Temp\Bootcamp2019\bootcamp_modulo07
 

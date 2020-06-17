@@ -2,7 +2,7 @@ import { call, select, put, all, takeLatest } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 import api from '../../../services/api';
 import { formatPrice } from '../../../util/format';
-import { addToCardSuccess, updateAmount } from './actions';
+import { addToCardSuccess, updateAmountSuccess } from './actions';
 
 // O 'asterisco' indica que a função é 'async await', essa notação chama-se
 // 'generator' e ele é mais poderoso que o 'async await'
@@ -24,7 +24,7 @@ function* addToCart({ id }) {
 
   if (productExists) {
     // Dispara a action
-    yield put(updateAmount(id, amount));
+    yield put(updateAmountSuccess(id, amount));
   } else {
     // yield = ield
     const response = yield call(api.get, `/products/${id}`);
@@ -38,5 +38,23 @@ function* addToCart({ id }) {
     yield put(addToCardSuccess(data));
   }
 }
+
+function* updateAmount({ id, amount }) {
+  if (amount <= 0) return;
+
+  const stock = yield call(api.get, `stock/${id}`);
+  const stockAmount = stock.data.amount;
+
+  if (amount > stockAmount) {
+    toast.error('Quantidade solicitada fora de estoque!');
+    return;
+  }
+
+  yield put(updateAmountSuccess(id, amount));
+}
+
 // takeLatest garante que somente a última chamada será aproveitada
-export default all([takeLatest('@cart/ADD_REQUEST', addToCart)]);
+export default all([
+  takeLatest('@cart/ADD_REQUEST', addToCart),
+  takeLatest('@cart/UPDATE_AMOUNT_REQUEST', updateAmount),
+]);
