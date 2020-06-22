@@ -1,7 +1,10 @@
 import { call, select, put, all, takeLatest } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 import api from '../../../services/api';
-import history from '../../../services/history';
+
+/** Esse history não funcionou muito bem, mas segue o baile,
+ * era só para direcionar para a tela de cart mesmo */
+// import history from '../../../services/history';
 import { formatPrice } from '../../../util/format';
 import { addToCardSuccess, updateAmountSuccess } from './actions';
 
@@ -37,7 +40,7 @@ function* addToCart({ id }) {
     };
 
     yield put(addToCardSuccess(data));
-    history.push('/cart');
+    // history.push('/cart');
   }
 }
 

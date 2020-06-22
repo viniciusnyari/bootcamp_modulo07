@@ -121,7 +121,7 @@ yarn add react-toastify
 #Instalando 'history' - controlar a history api que o 'react-router-dom' utiliza
 yarn add history
 
-Parei aqui: Estoque na alteração - 02:41
+ 
 #Repositório
 C:\Temp\Bootcamp2019\bootcamp_modulo07
 
