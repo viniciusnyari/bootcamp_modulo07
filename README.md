@@ -27,48 +27,48 @@ Será gerado o arquivo
 yarn add eslint -D
 
 ## Inicializando o 'eslint'
-yarn eslint --init
-Responda as perguntas conforme abaixo: 
-? How would you like to use ESLint? To check syntax, find problems, and enforce code style
-? What type of modules does your project use? JavaScript modules (import/export)
-? Which framework does your project use? React
-? Does your project use TypeScript? No
-? Where does your code run? Browser
-? How would you like to define a style for your project? Use a popular style guide
+yarn eslint --init <br/>
+Responda as perguntas conforme abaixo: <br/>
+? How would you like to use ESLint? To check syntax, find problems, and enforce code style<br/>
+? What type of modules does your project use? JavaScript modules (import/export)<br/>
+? Which framework does your project use? React<br/>
+? Does your project use TypeScript? No<br/>
+? Where does your code run? Browser<br/>
+? How would you like to define a style for your project? Use a popular style guide<br/>
 ? Which style guide do you want to follow? Airbnb: https://github.com/airbnb/javascript
-? What format do you want your config file to be in? JavaScript
-Checking peerDependencies of eslint-config-airbnb@latest
-Responsa 'Y' para tudo o que for questionado e aguarde a instalação.
+? What format do you want your config file to be in? JavaScript<br/>
+Checking peerDependencies of eslint-config-airbnb@latest<br/>
+Responsa 'Y' para tudo o que for questionado e aguarde a instalação.<br/>
 
 ## Instalando pretier - deixa o código mais bonito - eslint procura erros (ausência de pontos)
 yarn add prettier eslint-config-prettier eslint-plugin-prettier babel-eslint -D
 
 ## Criar arquivo '.prettierrc'
-{
-  "singleQuote": true,
-  "trainlingComma":"es5"
-}
+{<br/>
+  "singleQuote": true,<br/>
+  "trainlingComma":"es5"<br/>
+}<br/>
 
 ## Configurações do '.eslintrc.js'
-extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'prettier',
-    'prettier/react',
-  ],
-parser: 'babel-eslint',
-plugins: [
-    'react',
-    'prettier',
-  ],
-  rules: {
-    'prettier/prettier':'error',
-    'react/jsx-filename-extension' :[
-      'warn',
-      { extensions: ['.jsx','.js']}
-    ],
-    'import/prefer-default-export': 'off'
-  },  
+extends: [<br/>
+    'plugin:react/recommended',<br/>
+    'airbnb',<br/>
+    'prettier',<br/>
+    'prettier/react',<br/>
+  ],<br/>
+parser: 'babel-eslint',<br/>
+plugins: [<br/>
+    'react',<br/>
+    'prettier',<br/>
+  ],<br/>
+  rules: {<br/>
+    'prettier/prettier':'error',<br/>
+    'react/jsx-filename-extension' :[<br/>
+      'warn',<br/>
+      { extensions: ['.jsx','.js']}<br/>
+    ],<br/>
+    'import/prefer-default-export': 'off'<br/>
+  },  <br/>
 
 
 ## Rodando a aplicação - essa configuração está no 'package.json'
@@ -97,15 +97,15 @@ https://github.com/typicode/json-server
 Permite criar uma API fake enquanto a API nova não está pronta
 
 ## Instalando o Json-Server de forma global
-yarn global add json-server
+yarn global add json-server<br/>
 Após instalado foi criado um arquivo chamado 'server.json' com os produtos e foi colocado no raiz do projeto
 
 ## Instalando o axios
 yarn add axios
 
 ## Executando o server fake com aquele arquivo json gerado - api fake
-json-server server.json -p 3333 -w
-Se pode acessar a api fake através do endereço no navegador 'http://localhost:3333/products'
+json-server server.json -p 3333 -w<br/>
+Se pode acessar a api fake através do endereço no navegador 'http://localhost:3333/products'<br/>
 
 ## Instalando o 'Redux'
 yarn add redux react-redux
