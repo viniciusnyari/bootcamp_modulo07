@@ -143,4 +143,4 @@ json-server server.json -p 3333 -w
 
 /** Esse history não funcionou muito bem, mas segue o baile, era só para direcionar para a tela de cart mesmo */
  
-
+https://app.rocketseat.com.br/node/utilizando-react-hooks
